@@ -1,0 +1,32 @@
+<div class="row jumbotron bg-light shadow-lg">
+  <div class="text-center container-fluid">
+    <div class="row">
+      {{#each notes}}
+      <div class="col-md-3">
+        <div class="btn-group btn-block">
+          <button type="button" class="btn btn-primary" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            <h5 class="card-title">{{title}}</h5>
+          </button>
+          <div class="dropdown-menu" id="dropdown">
+            <a class="dropdown-item" href="/edit/{{_id}}">Edit</a>
+            <a class="dropdown-item" href="/delete">Delete</a>
+          </div>
+        </div>
+        <div class="card bg-light mb-3" style="width: 240px;height: 270px;">
+          <div class="card-body">
+            <p class="card-text">{{content}}</p>
+          </div>
+        </div>
+      </div>
+      {{else}}
+      <div class="mx-auto">
+        <div class="card-body">
+          <h4 class="lead">notes box is empty</h4>
+          <a href="/add" class="btn btn-primary btn-block">Create</a>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</div>

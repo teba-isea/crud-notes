@@ -1,9 +1,11 @@
-const database = require('mongoose');
+const database = require("mongoose");
 
-database.connect('mongodb://localhost/crud-db',{
+database
+  .connect("mongodb://localhost/crud-db", {
     useCreateIndex: true,
     useNewUrlParser: true,
-    useFindAndModify: false
-})
-.then(db => console.log('database already'))
-.catch(err => console.error(err));
+    useFindAndModify: false,
+    useUnifiedTopology: true,
+  })
+  .then((db) => console.log("database already"))
+  .catch((err) => console.error(err));
