@@ -1,0 +1,29 @@
+<body>
+  <header>
+    <nav class="navbar navbar-dark bg-dark mb-5">
+      <a href="/" class="navbar-brand text-center">
+        <h1>CRUD notes</h1>
+        <h6 class="card-subtitle">Elegant & simply</h6>
+      </a>
+      <div class="btn-group justify-end mr-5">
+        {{#if user}}
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          Menu  </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="/notes">notes</a>
+          <a class="dropdown-item" href="/add">add note</a>
+          <a class="dropdown-item" href="/about">about me</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/logout">logout</a>
+
+          {{else}}
+          <a href="/signin"><button type="button" class="btn btn-secondary mr-2">Sign in</button></a>
+          <a href="/signup"><button type="button" class="btn btn-secondary">Sign up</button></a>
+          {{/if}}
+        </div>
+        <div class=" mr-5"></div>
+      </div>
+      </div>
+    </nav>
+  </header>

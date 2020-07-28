@@ -11,30 +11,19 @@
 	<title>Crud notes by Esteban Isea</title>
 </head>
 
-<body>
-	<header>
-		<nav class="navbar navbar-dark bg-dark mb-5">
-			<a href="/" class="navbar-brand text-center">
-				<h1>CRUD notes</h1>
-				<h5 class="card-subtitle">Elegant & simply</h5>
-			</a>
-			<div class="btn-group justify-end" role="group" aria-label="Basic example">
-				<button type="button" class="btn btn-secondary">Register</button>
-				<button type="button" class="btn btn-secondary">Sign in</button>
-				<button type="button" class="btn btn-secondary">About the App</button>
-			</div>
-		</nav>
-	</header>
+
 
 
 	<main>
-		<div class="container">
+			{{> navigations}}
+		<div class="container-md mb-5">
 			{{> message}}
+			{{> errors}}
 			{{{body}}}
 		</div>
 	</main>
 
-	<footer>
+	<footer class=" fixed-bottom">
 		<div class="container-fluid bg-dark p-3 text-center text-white">
 			<h6>CRUD notes by <a href="https://github.com/teba-isea/">Esteban Isea</a></h6>
 		</div>

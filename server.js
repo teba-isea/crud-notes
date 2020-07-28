@@ -4,6 +4,7 @@ const session = require("express-session");
 const flash = require("connect-flash");
 const methodOverride = require("method-override");
 const path = require("path");
+const passport = require("passport");
 // Asignations
 const server = express();
 require("./database");
@@ -13,11 +14,12 @@ server.engine(
   ".hbs",
   handlebars({
     defaultLayout: "main",
-    partialsDir: path.join(server.get('views'),'partials'),
+    partialsDir: path.join(server.get("views"), "partials"),
     extname: ".hbs",
   }),
 );
 server.set("view engine", ".hbs");
+require("./config/passport");
 // Middleware
 
 server.use(express.urlencoded({ extended: false }));
@@ -29,11 +31,16 @@ server.use(
     saveUninitialized: true,
   }),
 );
+server.use(passport.initialize());
+server.use(passport.session());
 server.use(flash());
 // Globals
 server.use((req, res, next) => {
   res.locals.success_msg = req.flash("success_msg");
-  next()
+  res.locals.error_msg = req.flash("success_msg");
+  res.locals.error = req.flash("error");
+  res.locals.user = req.user || null
+  next();
 });
 // Routes
 server.use(require("./routes/index"));
