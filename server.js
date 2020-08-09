@@ -10,8 +10,7 @@ require('./database');
 server.set('port', process.env.PORT || 3000);
 server.engine('.hbs', handlebars({
 	defaultLayout: 'main',
-	layoutsDir: 'layouts',
-	partialsDir:'partials',
+	layoutsDir: 'views',
 	extname:'.hbs'
 }));
 server.set('view engine', '.hbs');

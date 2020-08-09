@@ -1,11 +1,11 @@
 const router = require('express').Router();
 
 router.get('/', (req,res)=>{
-    res.send('index')
+    res.render('partials/index')
 });
 
 router.get('/about', (req,res)=>{
-    res.send('about')
+    res.render('partials/about')
 });
 
 module.exports = router
