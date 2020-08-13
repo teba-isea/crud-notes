@@ -2,7 +2,7 @@ const router = require("express").Router();
 const Note = require("../models/note");
 
 router.get("/add", (req, res) => {
-  res.render("partials/notes/addnote");
+  res.render("addnote");
 });
 
 router.post("/add", async (req, res) => {
@@ -23,24 +23,32 @@ router.post("/add", async (req, res) => {
   } else {
     const newNote = new Note({ title, content });
     await newNote.save();
+    req.flash('success_msg', 'Note added successfully')
     res.redirect("/notes");
   }
 });
 
 router.get("/edit/:id", async (req, res) => {
   const note = await Note.findById(req.params.id).lean();
-  res.render("partials/notes/editnote", { note });
+  res.render("editnote", { note });
 });
 
 router.put("/edit/:id", async (req, res) => {
   const { title, content } = req.body;
   await Note.findByIdAndUpdate(req.params.id, { title, content });
+  req.flash('success_msg', 'Note edited successfully')
   res.redirect("/notes");
 });
 
 router.get("/notes", async (req, res) => {
   const notes = await Note.find().lean().sort({ date: "desc" });
-  res.render("partials/notes/allnotes", { notes });
+  res.render("allnotes", { notes });
+});
+
+router.delete("/delete/:id", async (req, res) => {
+  await Note.findByIdAndDelete(req.params.id)
+  req.flash('success_msg', 'Note deleted successfully')
+  res.redirect('/notes')
 });
 
 module.exports = router;

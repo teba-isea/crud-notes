@@ -9,8 +9,11 @@
             <h5 class="card-title">{{title}}</h5>
           </button>
           <div class="dropdown-menu" id="dropdown">
-            <a class="dropdown-item" href="/edit/{{_id}}">Edit</a>
-            <a class="dropdown-item" href="/delete">Delete</a>
+            <a class="dropdown-item" href="/edit/{{_id}}">edit</a>
+            <form action="/delete/{{_id}}?_method=DELETE" method="post">
+              <input type="hidden" name="_method" value="DELETE">
+              <button class="dropdown-item" type="submit">delete</button>
+            </form>
           </div>
         </div>
         <div class="card bg-light mb-3" style="width: 240px;height: 270px;">
