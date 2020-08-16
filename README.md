@@ -24,7 +24,7 @@ npm test
 Home page
 ![create a user](/.readme_files/signup.png)
 create a user
-![using notes](/.readme_files/notes.png)
+![Using notes](/.readme_files/notes.png)
 using the notes
 ## more details
 
