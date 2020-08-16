@@ -1,9 +1,10 @@
-<div class="row jumbotron bg-light shadow-lg">
-  <div class="text-center container-fluid">
-    <div class="row">
+<div class="row jumbotron bg-light shadow-lg mb-5">
+  <div class=" row row-cols-4 text-center">
+      {{#if notes}}
       {{#each notes}}
-      <div class="col-md-3">
-        <div class="btn-group btn-block">
+      <div class="col-3 col-md-3 m-auto ">
+        <div class="card bg-light mb-3 shadow-sm" style="width: 240px;height: 270px;">
+          <div class="btn-group btn-block">
           <button type="button" class="btn btn-primary" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
             <h5 class="card-title">{{title}}</h5>
@@ -16,9 +17,30 @@
             </form>
           </div>
         </div>
-        <div class="card bg-light mb-3" style="width: 240px;height: 270px;">
           <div class="card-body">
             <p class="card-text">{{content}}</p>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+      <div class="col-3 col-md-3 m-auto">
+        <div class="card bg-light mb-3" style="width: 240px;height: 270px;">
+          <div class="btn-group btn-block">
+          <button type="button" class="btn btn-primary" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            <h5 class="card-title">Are you think so....</h5>
+          </button>
+          <div class="dropdown-menu" id="dropdown">
+            <a class="dropdown-item" href="/edit/{{_id}}">edit</a>
+            <form action="/delete/{{_id}}?_method=DELETE" method="post">
+              <input type="hidden" name="_method" value="DELETE">
+              <button class="dropdown-item" type="submit">delete</button>
+            </form>
+          </div>
+        </div>
+          <div class="card-body">
+            <p class="card-text"><a href="/add"><button type="button" class="btn btn-success btn-block">Add
+                  now</button></a></p>
           </div>
         </div>
       </div>
@@ -29,7 +51,8 @@
           <a href="/add" class="btn btn-primary btn-block">Create</a>
         </div>
       </div>
-      {{/each}}
+      {{/if}}
+
     </div>
   </div>
 </div>

@@ -4,3 +4,11 @@
 a:hover {
   text-decoration: none;
 }
+
+.bg-main {
+  background-color: rgb(67, 0, 190);
+}
+
+.bg-main-dark{
+  background-color: rgb(54, 0, 153);
+}

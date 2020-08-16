@@ -5,6 +5,7 @@ const flash = require("connect-flash");
 const methodOverride = require("method-override");
 const path = require("path");
 const passport = require("passport");
+
 // Asignations
 const server = express();
 require("./database");

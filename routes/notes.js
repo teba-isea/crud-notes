@@ -13,7 +13,7 @@ router.post("/add",isAuthenticated, async (req, res) => {
     errors.push({ text: "please write a title" });
   }
   if (!content) {
-    errors.push({ text: "please wite a content" });
+    errors.push({ text: "please write some content" });
   }
   if (errors.length > 0) {
     res.redirect("/addnote", {
