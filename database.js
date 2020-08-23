@@ -12,7 +12,7 @@ const testDb = "mongodb+srv://teba-isea:bLeaJmG1dFeHp2Vj@cluster0.jm87x.mongodb.
 
 database
   .connect(testDb, { useNewUrlParser: true ,useUnifiedTopology: true})
-  .then((db) => console.log(`Database already: ${localUrl}`))
+  .then((db) => console.log(`Database already: ${testDb}`))
   .catch((err) => console.error(`Can't connect to the database: ${err}`));
 
 
