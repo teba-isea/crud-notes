@@ -4,7 +4,7 @@ a system a CRUD web application capable of creating, editing and deleting notes 
 
 I decided to validate my knowledge creating an implementation that 
 can Create, Read, Update, Delete and View Data (CRUD) using only JS technologies.
-
+you can try it right now by going [here](https://teba-isea-crudnotes.herokuapp.com/)
 ## requirements
 to run this project you need install Nodejs and MongoDB  
 ## how to deploy on local:
